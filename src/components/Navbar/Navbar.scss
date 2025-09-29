@@ -1,0 +1,14 @@
+nav {
+  .navbar-menu {
+    li {
+      padding: 0 12px;
+      cursor: pointer;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s ease;
+      &.active {
+        border-bottom-color: #49557e;
+      }
+    }
+  }
+}
