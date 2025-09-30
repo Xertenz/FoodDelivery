@@ -1,0 +1,19 @@
+header {
+  .header-content {
+    background: url("../../assets/header_img.png") no-repeat;
+    height: 34vw;
+    background-position: center;
+    .jumbotron {
+      animation: FadeIn 2s;
+    }
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
