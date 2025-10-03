@@ -1,0 +1,10 @@
+.explore-menu {
+  .explore-menu-list {
+    img {
+      border-radius: 50%;
+      &.active {
+        outline: 2px solid red;
+      }
+    }
+  }
+}
