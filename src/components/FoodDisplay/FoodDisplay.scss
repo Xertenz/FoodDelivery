@@ -1,0 +1,7 @@
+.food-display {
+  animation: FadeIn 2s;
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-items: center;
+  }
+}

@@ -6,7 +6,7 @@ export default function ExploreMenu({category, setCategory}) {
 
 
 	return (
-		<div className="container mx-auto explore-menu">
+		<section className="container mx-auto explore-menu">
 			<h1>Explore our menu</h1>
 			<p className="explore-menu-text">Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
 			<div className="explore-menu-list py-4 flex justify-between items-center overflow-x-scroll scrollbar-hide">
@@ -17,6 +17,6 @@ export default function ExploreMenu({category, setCategory}) {
 					</div>
 				) )}
 			</div>
-		</div>
+		</section>
 	)
 }
