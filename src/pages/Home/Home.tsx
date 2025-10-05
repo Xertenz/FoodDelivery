@@ -11,7 +11,6 @@ export default function Home() {
     <>
       <Header />
       <ExploreMenu category={category} setCategory={setCategory} />
-			<hr className="text-gray-200 my-8" />
 			<FoodDisplay category={category} />
     </>
   );

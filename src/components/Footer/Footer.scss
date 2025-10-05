@@ -1,0 +1,15 @@
+footer {
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    .footer-content-center,
+    .footer-content-right {
+      &.footer-content-center span {
+        cursor: pointer;
+      }
+      ul li {
+        margin-bottom: 7px;
+      }
+    }
+  }
+}
