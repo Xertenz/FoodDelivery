@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import {StoreContext} from "../../context/StoreContext";
+import { StoreContext } from "../../context/StoreContext";
 import FoodItem from "../FoodItem/FoodItem";
 import "./FoodDisplay.scss";
 
@@ -12,8 +12,12 @@ type FoodType = {
   _id: string;
 };
 
-export default function FoodDisplay() {
-  const {foodList}  = useContext(StoreContext) as FoodType[] | null;
+interface Props {
+  category: string;
+}
+
+export default function FoodDisplay({ category }: Props) {
+  const { foodList } = useContext(StoreContext) as FoodType[] | null;
 
   return (
     <section className="food-display">
@@ -21,17 +25,21 @@ export default function FoodDisplay() {
         <h1>Top dishes near you</h1>
         <div className="food-display-list grid gap-x-8 gap-y-8">
           {foodList &&
-            foodList.map((item: FoodType) => (
-              <FoodItem
-                key={item._id}
-                id={item._id}
-                name={item.name}
-                price={item.price}
-                image={item.image}
-                category={item.category}
-                description={item.description}
-              />
-            ))}
+            foodList.map((item: FoodType) => {
+              if (category == "All" || category == item.category) {
+                return (
+                  <FoodItem
+                    key={item._id}
+                    id={item._id}
+                    name={item.name}
+                    price={item.price}
+                    image={item.image}
+                    category={item.category}
+                    description={item.description}
+                  />
+                );
+              }
+            })}
         </div>
       </div>
     </section>

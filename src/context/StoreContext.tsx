@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
 
 type FoodType = {
@@ -10,11 +10,32 @@ type FoodType = {
   id: string;
 };
 
+interface CartItemType {
+  [key: string]: number;
+}
+
 export const StoreContext = createContext<FoodType[] | null>(null);
 
-const StoreContextProvider = (props) => {
+const StoreContextProvider = (props: HTMLElement) => {
+  const [cartItems, setCartItems] = useState<CartItemType>({});
+  const addToCart = (itemId: number) => {
+    if (!cartItems[itemId]) {
+      setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
+    } else {
+      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    }
+  };
+
+  const removeFromCart = (itemId: number) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+  };
+
   const data = {
     foodList: food_list,
+    cartItems,
+    setCartItems,
+    addToCart,
+    removeFromCart,
   };
 
   return (
