@@ -3,7 +3,7 @@ import "./Footer.scss"
 
 export default function Footer() {
   return (
-    <footer className="footer text-[#d9d9d9] bg-[#323232] p-8 flex flex-col gap-7 items-center">
+    <footer className="footer text-[#d9d9d9] bg-[#323232] py-12 flex flex-col gap-7 items-center">
       <div className="footer-content container mx-auto grid gap-12">
         <div className="footer-content-left">
           <img src={assets.logo} alt="Logo" className="mb-4" />
