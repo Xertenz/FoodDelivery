@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { SlBasket } from "react-icons/sl";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({setShowLogin}) {
   const [menu, setMenu] = useState("home");
 
   return (
@@ -48,7 +48,7 @@ export default function Navbar() {
 						<span className="absolute w-2 h-2 bg-red-500 rounded-full top-[-5px] right-[-5px]"></span>
           </div>
           <div>
-            <button className="btn-login border cursor-pointer bg-transparent text-[18px] px-4! py-2! rounded-full hover:bg-[#fff4f2] transition transition-colors duration-200">
+            <button className="btn-login border cursor-pointer bg-transparent text-[18px] px-4! py-2! rounded-full hover:bg-[#fff4f2] transition-colors duration-200" onClick={() => setShowLogin(true)}>
               Login
             </button>
           </div>

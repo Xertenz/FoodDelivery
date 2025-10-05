@@ -1,0 +1,20 @@
+.login-popup {
+  background-color: rgba(0,0,0,0.4);
+  .login-popup-inputs {
+    input {
+      border: 2px solid #eee;
+      border-radius: 6px;
+      width: 100%;
+      padding: 8px;
+      outline: none;
+      transition: border 0.2s;
+      &:focus {
+        border-color: orange;
+      }
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+
+    }
+  }
+}
