@@ -17,7 +17,7 @@ export default function LoginPopup({ setShowLogin }) {
             className="cursor-pointer p-1 border border-transparent hover:border-orange-400 rounded transition-colors"
           />
         </div>
-        <div className="login-popup-inputs mb-4">
+        <div className="login-popup-inputs mb-1">
           {currState == "signup" && (
             <>
               <input type="text" placeholder="Username" required />
@@ -31,18 +31,34 @@ export default function LoginPopup({ setShowLogin }) {
           {currState == "signup" ? "Create Account" : "Login"}
         </button>
         <div className="login-popup-condition flex items-start gap-3 my-3">
-          <input type="checkbox" required className="mt-1.5" />
-          <p>By continuing, I agree to the terms of use & privacy policy.</p>
+          <input type="checkbox" required id="agree" className="mt-1.5" />
+          <label htmlFor="agree">
+            <p className="cursor-pointer">
+              By continuing, I agree to the terms of use & privacy policy.
+            </p>
+          </label>
         </div>
         {currState == "login" ? (
           <p>
             Create a new account?
-            <span onClick={() => setCurrState("signup")} className="text-blue-500 cursor-pointer"> Click here </span>
+            <span
+              onClick={() => setCurrState("signup")}
+              className="text-blue-500 cursor-pointer"
+            >
+              {" "}
+              Click here{" "}
+            </span>
           </p>
         ) : (
           <p>
             Already have an account?
-            <span onClick={() => setCurrState("login")} className="text-blue-500 cursor-pointer"> Login here </span>
+            <span
+              onClick={() => setCurrState("login")}
+              className="text-blue-500 cursor-pointer"
+            >
+              {" "}
+              Login here{" "}
+            </span>
           </p>
         )}
       </form>

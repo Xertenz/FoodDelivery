@@ -1,0 +1,19 @@
+.cart {
+  .cart-items-title {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    &.cart-items-item:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+    &.cart-items-item > * {
+      align-self: center;
+    }
+  }
+
+  .cart-bottom {
+    .cart-total-details:not(:last-child) {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+  }
+}

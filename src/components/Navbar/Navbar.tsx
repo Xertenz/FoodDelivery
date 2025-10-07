@@ -2,41 +2,47 @@ import "./Navbar.scss";
 import { assets } from "../../assets/assets.ts";
 import { IoSearch } from "react-icons/io5";
 import { SlBasket } from "react-icons/sl";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext.tsx";
 
-export default function Navbar({setShowLogin}) {
+export default function Navbar({ setShowLogin }) {
   const [menu, setMenu] = useState("home");
+
+  const { getTotalCartAmount } = useContext(StoreContext);
 
   return (
     <nav className="navbar">
       <div className="container mx-auto! flex justify-between items-center py-2!">
         <div className="logo">
-          <img src={assets.logo} alt="Logo" className="logo-img" />
+          <Link to="/">
+            <img src={assets.logo} alt="Logo" className="logo-img" />
+          </Link>
         </div>
         <ul className="navbar-menu flex justify-between items-center">
           <li
             onClick={() => setMenu("home")}
             className={menu == "home" ? "active" : ""}
           >
-            Home
+            <Link to="/">Home</Link>
           </li>
           <li
             onClick={() => setMenu("menu")}
             className={menu == "menu" ? "active" : ""}
           >
-            Menu
+            <Link to="/">Menu</Link>
           </li>
           <li
             onClick={() => setMenu("mobile-app")}
             className={menu == "mobile-app" ? "active" : ""}
           >
-            Mobile App
+            <Link to="/">Mobile App</Link>
           </li>
           <li
             onClick={() => setMenu("contact-us")}
             className={menu == "contact-us" ? "active" : ""}
           >
-            Contact Us
+            <Link to="/">Contact Us</Link>
           </li>
         </ul>
         <div className="navbar-right flex items-center gap-4 text-2xl">
@@ -44,11 +50,20 @@ export default function Navbar({setShowLogin}) {
             <IoSearch />
           </div>
           <div className="icon basket relative">
-            <SlBasket />
-						<span className="absolute w-2 h-2 bg-red-500 rounded-full top-[-5px] right-[-5px]"></span>
+            <Link to={"/cart"}>
+              <SlBasket />
+            </Link>
+            {getTotalCartAmount() == 0 ? (
+              ""
+            ) : (
+              <span className="absolute w-2 h-2 bg-red-500 rounded-full top-[-5px] right-[-5px]"></span>
+            )}
           </div>
           <div>
-            <button className="btn-login border cursor-pointer bg-transparent text-[18px] px-4! py-2! rounded-full hover:bg-[#fff4f2] transition-colors duration-200" onClick={() => setShowLogin(true)}>
+            <button
+              className="btn-login border cursor-pointer bg-transparent text-[18px] px-4! py-2! rounded-full hover:bg-[#fff4f2] transition-colors duration-200"
+              onClick={() => setShowLogin(true)}
+            >
               Login
             </button>
           </div>
