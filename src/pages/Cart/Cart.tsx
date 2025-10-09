@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import "./Cart.scss";
 import { StoreContext } from "../../context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const { cartItems, foodList, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
+	const navigate = useNavigate();
 
   return (
     <section className="cart py-12">
@@ -50,18 +52,18 @@ export default function Cart() {
             <div className="flex flex-col gap-2">
               <div className="cart-total-details flex justify-between">
                 <p>Subtotal</p>
-                <p>{getTotalCartAmount()}</p>
+                <p>${getTotalCartAmount()}</p>
               </div>
               <div className="cart-total-details flex justify-between">
                 <p>Delivery Fee</p>
-                <p>{2}</p>
+                <p>${getTotalCartAmount() == 0 ? 0 : 2}</p>
               </div>
               <div className="cart-total-details flex justify-between font-bold">
                 <p>Total</p>
-                <p>{getTotalCartAmount()+2}</p>
+                <p>${getTotalCartAmount() == 0 ? 0 : getTotalCartAmount()+2}</p>
               </div>
             </div>
-            <button className="uppercase text-white bg-orange-500 hover:bg-orange-600 cursor-pointer transition-colors py-1.5 rounded">
+            <button onClick={() => navigate("/order")} className="uppercase text-white bg-orange-500 hover:bg-orange-600 cursor-pointer transition-colors py-1.5 rounded">
               proced to checkout
             </button>
           </div>

@@ -1,0 +1,19 @@
+.place-order {
+  .place-order-left {
+    input {
+      margin-bottom: 12px;
+      border: 1px solid #eee;
+      width: 100%;
+      padding: 4px 8px;
+      border-radius: 3px;
+    }
+  }
+  .place-order-right {
+    .cart-total {
+      .cart-total-details:not(:last-child) {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+}
