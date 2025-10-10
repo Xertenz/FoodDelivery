@@ -14,6 +14,6 @@ A modern React application for food delivery.
 
 ```bash
 git clone https://github.com/Xertenz/FoodDelivery.git
-cd repo
+cd FoodDelivery
 npm install
 npm start
