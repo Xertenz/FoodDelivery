@@ -20,9 +20,11 @@ export default function FoodDisplay({ category }: Props) {
   const { foodList } = useContext(StoreContext) as FoodType[] | null;
 
   return (
-    <section className="food-display py-18">
-      <div className="container mx-auto">
-        <h1>Top dishes near you</h1>
+    <section className="food-display py-9">
+      <div className="container mx-auto px-8 sm:px-0">
+        <h1 className="text-3xl text-center font-bold mb-8">
+          Top dishes near you
+        </h1>
         <div className="food-display-list grid gap-x-8 gap-y-8">
           {foodList &&
             foodList.map((item: FoodType) => {

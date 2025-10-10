@@ -2,8 +2,8 @@ import "./Header.scss";
 
 export default function Header() {
   return (
-    <header className="header">
-      <div className="header-content bg-cover! p-12 ">
+    <header className="header ">
+      <div className="header-content bg-cover! p-12">
         <div className="container m-auto">
           <div className="jumbotron">
             <h1 className="mb-3 font-bold text-white text-2xl md:text-4xl">

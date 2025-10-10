@@ -3,8 +3,8 @@ import { menu_list } from "../../assets/assets.ts";
 
 export default function ExploreMenu({ category, setCategory }) {
   return (
-    <section className="container mx-auto explore-menu">
-      <h1>Explore our menu</h1>
+    <section className="container mx-auto explore-menu pt-12 pb-9 px-8 sm:px-0" id="explore-menu">
+      <h1 className="text-3xl text-center font-bold mb-4">Explore our menu</h1>
       <p className="explore-menu-text">
         Choose from a diverse menu featuring a delectable array of dishes. Our
         mission is to satisfy your cravings and elevate your dining experience,

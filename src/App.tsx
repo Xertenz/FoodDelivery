@@ -6,6 +6,7 @@ import { useState } from "react";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
+import "./App.css"
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false);

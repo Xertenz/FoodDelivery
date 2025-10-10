@@ -8,7 +8,7 @@ export default function Cart() {
 	const navigate = useNavigate();
 
   return (
-    <section className="cart py-12">
+    <section className="cart py-12 px-8 sm:px-0">
       <div className="container mx-auto">
         <div className="cart-items mb-12">
           <div className="cart-items-title">

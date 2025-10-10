@@ -1,10 +1,10 @@
 import { assets } from "../../assets/assets";
-import "./Footer.scss"
+import "./Footer.scss";
 
 export default function Footer() {
   return (
-    <footer className="footer text-[#d9d9d9] bg-[#323232] py-12 flex flex-col gap-7 items-center">
-      <div className="footer-content container mx-auto grid gap-12">
+    <footer className="footer text-[#d9d9d9] bg-[#323232] pt-9 pb-6 flex flex-col gap-7 items-center" id="footer">
+      <div className="footer-content container mx-auto flex! flex-col gap-8 sm:grid! sm:gap-12! px-8 sm:px-0">
         <div className="footer-content-left">
           <img src={assets.logo} alt="Logo" className="mb-4" />
           <p className="mb-6">
@@ -22,10 +22,18 @@ export default function Footer() {
         <div className="footer-content-center">
           <h2 className="text-2xl font-bold mb-2">COMPANY</h2>
           <ul className="list-disc ps-[20px]">
-            <li><span>Home</span></li>
-            <li><span>About us</span></li>
-            <li><span>Delivery</span></li>
-            <li><span>Privecy Policy</span></li>
+            <li>
+              <span>Home</span>
+            </li>
+            <li>
+              <span>About us</span>
+            </li>
+            <li>
+              <span>Delivery</span>
+            </li>
+            <li>
+              <span>Privecy Policy</span>
+            </li>
           </ul>
         </div>
         <div className="footer-content-right">
